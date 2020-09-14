@@ -1,0 +1,22 @@
+- hosts: Kubernetes_Master
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: get join command
+      shell: kubeadm token create --print-join-command
+      register: join_command_raw
+
+    - name: Register dummy host with variable It Access In Next Play
+      add_host:
+       name: "DUMMY_HOST"
+       JOIN_COMMAND: " {{ join_command_raw.stdout }}"
+
+
+- hosts: Kubernetes_Worker
+  become: yes
+  tasks:
+    - name: join cluster
+      shell: "{{ hostvars['DUMMY_HOST']['JOIN_COMMAND'] }} >> node_joined.txt"
+      args:
+        chdir: $HOME
+        creates: node_joined.txt
