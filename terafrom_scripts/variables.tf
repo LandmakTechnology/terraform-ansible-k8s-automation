@@ -1,9 +1,9 @@
 variable "aws_region" {
-  default = "ap-south-1"
+  default = "us-west-2"
 }
 
 variable "key_name" {
-  default = "devops"
+  default = "Oregon"
 }
 variable "vpc_cidr" {
   default = "172.0.0.0/24"
@@ -14,7 +14,7 @@ variable "subnets_cidr" {
 }
 variable "availability_zones" {
   type    = list(string)
-  default = ["ap-south-1a", "ap-south-1b"]
+  default = ["us-west-2a", "us-west-2b"]
 }
 variable "kubernetes_ami" {
   default = "ami-0b44050b2d893d5f7"
