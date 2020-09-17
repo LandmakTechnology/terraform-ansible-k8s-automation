@@ -1,3 +1,6 @@
+# Terraform and Ansible
+We are using terraform for provisioning the intrstructure which include; VPC, Internet Gateway, RT, Servers (Ansible, Jenkins)
+
 # Ansible Installation
 ``` sh
 $ sudo yum install python3 -y
