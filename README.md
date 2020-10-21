@@ -12,6 +12,8 @@ $ sudo yum -y install python3-pip -y
 $ sudo useradd ansible
 $ echo "ansible  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible
 $ sudo su ansible
+$ subscription-manager repos --enable ansible-2.8-for-rhel-8-x86_64-rpms
+$ dnf -y install ansible
 $ pip3 install ansible --user
 $ pip3 install boto3 --user
 ```
