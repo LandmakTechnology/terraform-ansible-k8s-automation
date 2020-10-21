@@ -3,6 +3,8 @@ We are using terraform for provisioning the intrstructure which include; VPC, In
 
 # Ansible Installation
 ``` sh
+ $ sudo apt-add-repository ppa:ansible/ansible  # ubuntu
+ $ sudo apt install ansible  # ubuntu
 $ sudo yum install python3 -y
 $ sudo alternatives --set python /usr/bin/python3
 $ sudo yum -y install python3-pip -y
