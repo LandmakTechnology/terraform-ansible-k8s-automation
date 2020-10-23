@@ -3,22 +3,23 @@ We are using terraform for provisioning the intrstructure which include; VPC, In
 
 # Ansible Installation
 ``` sh
- $ sudo apt-add-repository ppa:ansible/ansible  # ubuntu
- $ sudo apt install ansible  # ubuntu
-$ sudo yum install python3 -y
-$ sudo alternatives --set python /usr/bin/python3
-$ sudo yum -y install python3-pip -y
-
+# Create a REDHAT EC2 instance in aws cloud and assigned IAM roles
+AmazonEC2FullACCESS
+AmazonVPCFullACCESS
 $ sudo useradd ansible
 $ echo "ansible  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible
-$ sudo su ansible
-$ subscription-manager repos --enable ansible-2.8-for-rhel-8-x86_64-rpms
-$ dnf -y install ansible
+$ sudo su - ansible
+# Enable PassowrdLogin and assign password to ansible user
+$ sudo yum install python3 -y
+$ sudo alternatives --set python /usr/bin/python3
+# Install pip package manager for for python 
+$ sudo yum -y install python3-pip -y
 $ pip3 install ansible --user
+# install boto aws python SDK use to manages resources in aws cloud
 $ pip3 install boto3 --user
 ```
-## Infrastructure As A Code
-### Install Terraform
+## Infrastructure As A Code - 
+### Terraform Installation
 
 ``` sh
 $ sudo su ansible
@@ -40,7 +41,8 @@ $ cd Kuberentes_Cluster_Terraform_Ansible
 ```
 ###### <span style="color:orange"> Update Your Key Name in variables.tf file before executing terraform script </span>
 
-##### Create Infrastructure As A Code Using Terraform Scripts
+## Infrastructure As A Code - Terraform
+##### Create the intrstructure (VPC, Subnets, Route Tables, IGW, EC2 Instances, etc)
 ``` sh
 # Initialise to install plugins
 $ terraform init terafrom_scripts/
@@ -51,6 +53,10 @@ $ terraform plan terafrom_scripts/
 # Apply to create resources
 $ terraform apply --auto-approve terafrom_scripts/
 ```
+## Configuration Management Using Ansible with Dynamic Inventory
+### Check if Dynamic Inventory script is working
+$ chmod +x DynamicInventory.py
+$ ./DynamicInventory.py
 # Ansible command to setup k8s cluste using DynamicInventory.
 
 ###### <span style="color:red">Replace \<Pemfile> with your pemfile path in server </span>
