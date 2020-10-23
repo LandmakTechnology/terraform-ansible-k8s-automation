@@ -15,7 +15,7 @@ resource "aws_instance" "kubernetes_Servers" {
   vpc_security_group_ids = [aws_security_group.kubernetes_sg.id]
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
-  user_data              = "${file("terafrom_scripts/create_ansible_user.sh")}"
+#  user_data              = "${file("terafrom_scripts/create_ansible_user.sh")}"
 
   tags = {
     Name = "Kubernetes_Servers"
@@ -38,7 +38,7 @@ resource "aws_instance" "kubernetes_Workers" {
   vpc_security_group_ids = [aws_security_group.kubernetes_sg.id]
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
-  user_data              = "${file("terafrom_scripts/create_ansible_user.sh")}"
+#  user_data              = "${file("terafrom_scripts/create_ansible_user.sh")}"
 
   tags = {
     Name = "Kubernetes_Servers"
