@@ -55,6 +55,7 @@ $ terraform apply --auto-approve terafrom_scripts/
 ```
 ## Configuration Management Using Ansible with Dynamic Inventory
 ### Check if Dynamic Inventory script is working
+``` sh
 $ chmod +x DynamicInventory.py
 $ ./DynamicInventory.py
 # Ansible command to setup k8s cluste using DynamicInventory.
