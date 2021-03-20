@@ -56,6 +56,11 @@ $ terraform apply --auto-approve terafrom_scripts/
 ## Configuration Management Using Ansible with Dynamic Inventory
 ### Check if Dynamic Inventory script is working
 ``` sh
+ #Create config file in current user .aws folder And below content.
+$ mkdir ~/.aws
+$ vi ~/.aws/config
+[default]
+region=ca-central-1
 $ chmod +x DynamicInventory.py
 $ ./DynamicInventory.py
 # Ansible command to setup k8s cluste using DynamicInventory.
