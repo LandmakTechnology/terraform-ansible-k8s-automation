@@ -23,7 +23,7 @@ $ pip3 install boto3 --user
 
 ``` sh
 $ sudo su ansible
-$ sudo yum install wget unzip -y
+$ sudo yum install wget git unzip -y
 $ wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip
 $ sudo unzip terraform_0.12.26_linux_amd64.zip -d /usr/local/bin/
 # Export terraform binary path temporally
@@ -37,7 +37,7 @@ $ source ~/.bashrc
 #### Clone terraform and ansible scripts
 ``` sh
 $ git clone https://github.com/LandmakTechnology/Terraform-Ansible-k8s-Automation.git
-$ cd Kuberentes_Cluster_Terraform_Ansible
+$ cd terraform-ansible-k8s-automation
 ```
 ###### <span style="color:orange"> Update Your Key Name in variables.tf file before executing terraform script </span>
 
