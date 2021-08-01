@@ -36,8 +36,8 @@ $ source ~/.bashrc
 ```
 #### Clone terraform and ansible scripts
 ``` sh
-$ git clone https://github.com/LandmakTechnology/Terraform-Ansible-k8s-Automation.git
-$ cd terraform-ansible-k8s-automation
+ git clone https://github.com/LandmakTechnology/Terraform-Ansible-k8s-Automation.git
+ cd terraform-ansible-k8s-automation
 ```
 ###### <span style="color:orange"> Update Your Key Name in variables.tf file before executing terraform script </span>
 
